@@ -1,0 +1,287 @@
+﻿<!DOCTYPE html>
+<!-- *******************************************************************************************
+     *                                         HEAD                                            *
+     ******************************************************************************************* -->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css" />
+    <script src="scripts/jquery.js"></script>
+    <!-- Exemple de overwrite sur les fonctions de bases contenues dans js/jquery.js-->
+    <script type="text/javascript">
+        $(document).on('mobileinit', function () {
+            $.mobile.defaultPageTransition = 'fade';
+        });
+    </script>
+    <script src="scripts/jquery.mobile-1.4.5.js"></script>
+</head>
+
+<!-- *******************************************************************************************
+     *                                       MAIN PAGE                                         *
+     ******************************************************************************************* -->
+<body>
+    <div data-role="page" id="mainPage">
+
+        <!-- PANEL -->
+        <div data-role="panel" data-display="push" data-theme="b" id="mypanel">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="#panel-responsive-page2">Accordion</a></li>
+                <li><a href="#panel-responsive-page2">Ajax Navigation</a></li>
+                <li><a href="#panel-responsive-page2">Autocomplete</a></li>
+                <li><a href="#panel-responsive-page2">Buttons</a></li>
+                <li><a href="#panel-responsive-page2">Checkboxes</a></li>
+                <li><a href="#panel-responsive-page2">Collapsibles</a></li>
+                <li><a href="#panel-responsive-page2">Controlgroup</a></li>
+                <li><a href="#panel-responsive-page2">Dialogs</a></li>
+            </ul>
+        </div>
+        <!-- /PANEL-->
+        <!-- HEADER -->
+        <div data-role="header">
+            <h1>Accueil</h1>
+            <a href="#mypanel" data-position="left" class="ui-input-btn ui-btn ui-icon-bars ui-btn-icon-notext ui-corner-all"></a>
+            <a href="#settingsPage" data-position="right" data-transition="slide" class="ui-input-btn ui-btn ui-icon-gear ui-btn-icon-notext ui-corner-all"></a>
+        </div>
+        <!-- /HEADER -->
+        <!-- MAIN -->
+        <div role="main" class="ui-content">
+            <p id="mainContent">Bienvenu les Men in Black... Vous êtes plus que dans le film.</p>
+        </div>
+        <!-- /MAIN -->
+        <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#mainPage" data-icon="grid">Accueil</a></li>
+                    <li><a href="#glanderPage" data-rel="dialog" data-transition="slideup" data-icon="heart">Glander</a></li>
+                    <li><a href="#hotPage" data-icon="star">Top Articles</a></li>
+                    <li><a href="#test" data-icon="alert">TEST</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /FOOTER -->
+    </div>
+
+
+    <!-- *******************************************************************************************
+         *                                       TOP PAGE                                          *
+         ******************************************************************************************* -->
+
+    <div data-role="page" id="hotPage">
+
+        <!-- HEADER -->
+        <div data-role="header">
+            <h1>Top articles</h1>
+        </div>
+        <!-- /HEADER -->
+        <!-- MAIN -->
+        <div role="main" class="ui-content">
+            <div class="ui-corner-all custom-corners">
+                <div class="ui-bar ui-bar-a">
+                    <h3>Heading</h3>
+                </div>
+                <div class="ui-body ui-body-a">
+                    <p>Résumé du contenu</p>
+                    <a href="#" data-role="button" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-r ui-btn-icon-right ui-alt-icon ui-nodisc-icon">Lire article</a>
+                </div>
+            </div>
+        </div>
+        <!-- /MAIN -->
+        <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#mainPage" data-icon="grid">Accueil</a></li>
+                    <li><a href="#glanderPage" data-rel="dialog" data-transition="slideup" data-icon="heart">Glander</a></li>
+                    <li><a href="#hotPage" data-icon="star">Top Articles</a></li>
+                    <li><a href="#test" data-icon="alert">TEST</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /FOOTER -->
+    </div>
+
+    <!-- *******************************************************************************************
+         *                                    SETTINGS PAGE                                        *
+         ******************************************************************************************* -->
+
+    <div data-role="page" id="settingsPage">
+
+        <!-- HEADER-->
+        <div data-role="header">
+            <a href="#mainPage" data-position="left" data-transition="slide" data-direction="reverse" class="ui-input-btn ui-btn ui-icon-arrow-l ui-btn-icon-notext ui-corner-all"></a>
+            <h1>Paramètres</h1>
+        </div>
+        <!-- /HEADER -->
+        <!-- MAIN -->
+        <div role="main" class="ui-content">
+            <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">Sign in</a>
+            <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                <form>
+                    <div style="padding:10px 20px;">
+                        <h3>Please sign in</h3>
+                        <label for="un" class="ui-hidden-accessible">Username:</label>
+                        <input type="text" name="user" id="un" value="" placeholder="username" data-theme="a">
+                        <label for="pw" class="ui-hidden-accessible">Password:</label>
+                        <input type="password" name="pass" id="pw" value="" placeholder="password" data-theme="a">
+                        <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">Sign in</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!-- /MAIN -->
+        <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed">
+        </div>
+        <!-- /FOOTER -->
+    </div>
+
+    <!-- *******************************************************************************************
+         *                                    GLANDER PAGE                                         *
+         ******************************************************************************************* -->
+
+    <div data-role="page" id="glanderPage">
+
+        <!-- HEADER -->
+        <div data-role="header">
+            <h1>Glandouillons !</h1>
+        </div>
+        <!-- /HEADER -->
+        <!-- MAIN -->
+        <div role="main" class="ui-content">
+            <div class="ui-bar ui-bar-a">
+                <h3>Choix du temps</h3>
+            </div>
+            <div class="ui-body ui-body-a">
+                <div data-role="controlgroup" data-type="horizontal">
+                    <a href="#" id="minusTime" class="ui-btn ui-corner-all ui-icon-minus ui-btn-icon-notext">Icon only</a>
+                    <a href="#" id="plusTime" class="ui-btn ui-corner-all ui-icon-plus ui-btn-icon-notext">Icon only</a>
+                    <div class="ui-bar ui-bar-a">
+                        <div id="resultTime">0</div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui-bar ui-bar-a">
+                <h3>Choix des thèmes</h3>
+            </div>
+            <div class="ui-body ui-body-a">
+                <form>
+                    <fieldset data-role="controlgroup">
+                        <!--<legend>Vertical:</legend>-->
+                        <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a">
+                        <label for="checkbox-v-2a">Musique</label>
+                        <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b">
+                        <label for="checkbox-v-2b">Actualités</label>
+                        <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c">
+                        <label for="checkbox-v-2c">Insolite</label>
+                    </fieldset>
+                </form>
+            </div>
+
+            <a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>
+        </div>
+        <!-- /MAIN -->
+        <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed">
+        </div>
+        <!-- /FOOTER -->
+    </div>
+
+    <!-- *******************************************************************************************
+         *                                      TEST PAGE                                          *
+         ******************************************************************************************* -->
+
+    <div data-role="page" id="test" class="jqm-demos ui-responsive-panel" id="panel-responsive-page1" data-title="Panel responsive page" data-url="panel-responsive-page1">
+
+        <!-- HEADER -->
+        <div data-role="header">
+            <h1>Panel responsive</h1>
+            <a href="#nav-panel" data-icon="bars" data-iconpos="notext">Menu</a>
+            <a href="#add-form" data-icon="gear" data-iconpos="notext">Add</a>
+        </div>
+        <!-- /HEADER -->
+        <!-- MAIN -->
+        <div role="main" class="ui-content jqm-content jqm-fullwidth">
+            <h1>Panel responsive</h1>
+            <p>This is a typical page that has two buttons in the header bar that open panels. The left panel has the push display mode, the right panel reveal. To make this responsive, you can make the page re-flow at wider widths. This allows both the panel menu and page to be used together when more space is available. This behavior is controlled by CSS media queries. You can create a custom one for a specific breakpoint or use the breakpoint preset by adding the <code>class="ui-responsive-panel"</code> to the page container. We have added this class on this demo page. Note that when using the preset class, we also hide the dismiss layer on wider screens if the panel has the push display mode.</p>
+            <div data-demo-html="#panel-responsive-page1"></div><!--/demo-html -->
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <a href="../" data-rel="back" data-ajax="false" class="ui-btn ui-shadow ui-corner-all ui-mini ui-btn-inline ui-icon-carat-l ui-btn-icon-left ui-alt-icon ui-nodisc-icon">Back</a>
+        </div>
+        <!-- /MAIN -->
+        <!-- PANEL -->
+        <div data-role="panel" data-display="push" data-theme="b" id="nav-panel">
+            <ul data-role="listview">
+                <li data-icon="delete"><a href="#" data-rel="close">Close menu</a></li>
+                <li><a href="#panel-responsive-page2">Accordion</a></li>
+                <li><a href="#panel-responsive-page2">Ajax Navigation</a></li>
+                <li><a href="#panel-responsive-page2">Autocomplete</a></li>
+                <li><a href="#panel-responsive-page2">Buttons</a></li>
+                <li><a href="#panel-responsive-page2">Checkboxes</a></li>
+                <li><a href="#panel-responsive-page2">Collapsibles</a></li>
+                <li><a href="#panel-responsive-page2">Controlgroup</a></li>
+                <li><a href="#panel-responsive-page2">Dialogs</a></li>
+                <li><a href="#panel-responsive-page2">Fixed toolbars</a></li>
+                <li><a href="#panel-responsive-page2">Flip switch toggle</a></li>
+                <li><a href="#panel-responsive-page2">Footer toolbar</a></li>
+                <li><a href="#panel-responsive-page2">Form elements</a></li>
+                <li><a href="#panel-responsive-page2">Grids</a></li>
+                <li><a href="#panel-responsive-page2">Header toolbar</a></li>
+                <li><a href="#panel-responsive-page2">Icons</a></li>
+                <li><a href="#panel-responsive-page2">Links</a></li>
+                <li><a href="#panel-responsive-page2">Listviews</a></li>
+                <li><a href="#panel-responsive-page2">Loader overlay</a></li>
+                <li><a href="#panel-responsive-page2">Navbar</a></li>
+                <li><a href="#panel-responsive-page2">Navbar, persistent</a></li>
+                <li><a href="#panel-responsive-page2">Pages</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">Popup</a></li>
+                <li><a href="#panel-responsive-page2">Radio buttons</a></li>
+                <li><a href="#panel-responsive-page2">Select</a></li>
+                <li><a href="#panel-responsive-page2">Slider, single</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">New</a></li>
+                <li><a href="#panel-responsive-page2">Text inputs & textarea</a></li>
+                <li><a href="#panel-responsive-page2">Transitions</a></li>
+            </ul>
+        </div>
+        <!-- /PANEL -->
+        <!-- PANEL -->
+        <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="add-form">
+            <form class="userform">
+                <h2>Login</h2>
+                <label for="name">Username:</label>
+                <input type="text" name="name" id="name" value="" data-clear-btn="true" data-mini="true">
+                <label for="password">Password:</label>
+                <input type="password" name="password" id="password" value="" data-clear-btn="true" autocomplete="off" data-mini="true">
+                <div class="ui-grid-a">
+                    <div class="ui-block-a"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-b ui-mini">Cancel</a></div>
+                    <div class="ui-block-b"><a href="#" data-rel="close" class="ui-btn ui-shadow ui-corner-all ui-btn-a ui-mini">Save</a></div>
+                </div>
+            </form>
+        </div>
+        <!-- /PANEL -->
+        <!-- FOOTER -->
+        <div data-role="footer" data-position="fixed">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#mainPage" data-icon="grid">Accueil</a></li>
+                    <li><a href="#glanderPage" data-rel="dialog" data-transition="slideup" data-icon="heart">Glander</a></li>
+                    <li><a href="#hotPage" data-icon="star">Top Articles</a></li>
+                    <li><a href="#test" data-icon="alert">TEST</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- /FOOTER -->
+    </div>
+
+    <script src="scripts/index.js"></script>
+</body>
+</html>
